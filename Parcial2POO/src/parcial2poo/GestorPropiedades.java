@@ -1,5 +1,9 @@
 package parcial2poo;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 
 
 /**
@@ -8,9 +12,20 @@ package parcial2poo;
  */
 public class GestorPropiedades {
     
-    public void añadirPropiedad(Propiedad propiedad){
-        
+    public boolean añadirPropiedad(Propiedad propiedad,ArrayList<Propiedad> prop){
+        boolean sw = true;
+        for (int i = 0; i < prop.size(); i++) {
+           if (prop.get(i).getDireccion().equals(propiedad.getDireccion())){
+                JOptionPane.showMessageDialog(null, "Ese medico ya esta registrado", "ERROR", 0);
+                sw = false;
+           } 
     }
+        if (sw == true){
+            prop.add(propiedad);
+        }
+        return sw;
+    }
+    
     
     public void modificarPropiedad(Propiedad propiedad){
         

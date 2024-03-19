@@ -51,6 +51,11 @@ public class AgregarPropiedad extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
 
         txtDireccion.setFont(new java.awt.Font("Arial Unicode MS", 0, 15)); // NOI18N
+        txtDireccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDireccionActionPerformed(evt);
+            }
+        });
         add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 242, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial Unicode MS", 0, 16)); // NOI18N
@@ -121,6 +126,11 @@ public class AgregarPropiedad extends javax.swing.JPanel {
         add(comboEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, -1, -1));
 
         comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casa", "Apartamento", "Local Comercial" }));
+        comboTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboTipoActionPerformed(evt);
+            }
+        });
         add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -158,8 +168,17 @@ public class AgregarPropiedad extends javax.swing.JPanel {
             String direccion = txtDireccion.getText();
             
             
+            
         }
     }//GEN-LAST:event_btnIngresarActionPerformed
+
+    private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDireccionActionPerformed
+
+    private void comboTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboTipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboTipoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

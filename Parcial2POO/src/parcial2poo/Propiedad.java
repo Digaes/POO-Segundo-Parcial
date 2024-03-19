@@ -23,6 +23,8 @@ public class Propiedad {
         this.estado = estado;
         this.caracteristicas = caracteristicas;
     }
+    
+    
 
     public String getDireccion() {
         return direccion;
