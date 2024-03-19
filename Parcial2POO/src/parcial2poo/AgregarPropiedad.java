@@ -56,7 +56,7 @@ public class AgregarPropiedad extends javax.swing.JPanel {
                 txtDireccionActionPerformed(evt);
             }
         });
-        add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 242, -1));
+        add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 242, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial Unicode MS", 0, 16)); // NOI18N
         jLabel2.setText("Tipo de propiedad");
