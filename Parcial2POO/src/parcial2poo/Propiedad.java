@@ -14,16 +14,21 @@ public class Propiedad {
     protected String tipoPropiedad;
     protected double precio;
     protected String estado;
-    protected String caracteristicas;
+    protected String habitacion;
+    protected String baños;
+    protected String metros;
     
-    public Propiedad(String direccion, String tipo, double precio, String estado, String caracteristicas){
+    
+    public Propiedad(String direccion, String tipo, double precio, String estado, String hab, String baños, String m){
         this.direccion = direccion;
         this.tipoPropiedad = tipo;
         this.precio = precio;
         this.estado = estado;
-        this.caracteristicas = caracteristicas;
+        this.habitacion = hab;
+        this.baños = baños;
+        this.metros = m;
     }
-
+    
     public String getDireccion() {
         return direccion;
     }
@@ -56,12 +61,31 @@ public class Propiedad {
         this.estado = estado;
     }
 
-    public String getCaracteristicas() {
-        return caracteristicas;
+    public String getHabitacion() {
+        return habitacion;
     }
 
-    public void setCaracteristicas(String caracteristicas) {
-        this.caracteristicas = caracteristicas;
+    public void setHabitacion(String hab) {
+        this.habitacion = hab;
     }
     
+    public String getBaños() {
+        return baños;
+    }
+
+    public void setBaños(String baño) {
+        this.baños = baño;
+    }
+    
+    public String getMetros() {
+        return metros;
+    }
+
+    public void setMetros(String m) {
+        this.metros = m;
+    }
+    
+    public String toString() {
+        return "Propiedad{direccion=" + direccion + ", tipo=" + tipoPropiedad + ", precio=" + precio + ", estado=" + estado + ", hab=" + habitacion + ", baños="+ baños + ", metros="+ metros +"}";
+    }
 }

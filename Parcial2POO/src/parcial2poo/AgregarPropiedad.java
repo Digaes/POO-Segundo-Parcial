@@ -1,18 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package parcial2poo;
+
+import java.util.ArrayList;
 
 /**
  *
  * @author lymich
  */
 public class AgregarPropiedad extends javax.swing.JPanel {
-
-    /**
-     * Creates new form AgregarPropiedad
-     */
+    
+    static ArrayList<Propiedad> propiedades = new ArrayList<Propiedad>();
+    
     public AgregarPropiedad() {
         initComponents();
     }
@@ -43,6 +41,7 @@ public class AgregarPropiedad extends javax.swing.JPanel {
         btnIngresar = new javax.swing.JButton();
         comboEstado = new javax.swing.JComboBox<>();
         comboTipo = new javax.swing.JComboBox<>();
+        btnMostrar1 = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -51,6 +50,11 @@ public class AgregarPropiedad extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
 
         txtDireccion.setFont(new java.awt.Font("Arial Unicode MS", 0, 15)); // NOI18N
+        txtDireccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDireccionActionPerformed(evt);
+            }
+        });
         add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 242, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial Unicode MS", 0, 16)); // NOI18N
@@ -115,13 +119,26 @@ public class AgregarPropiedad extends javax.swing.JPanel {
                 btnIngresarActionPerformed(evt);
             }
         });
-        add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 500, -1, -1));
+        add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, -1, -1));
 
         comboEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disponible", "Vendido", "Alquilado" }));
         add(comboEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, -1, -1));
 
         comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casa", "Apartamento", "Local Comercial" }));
+        comboTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboTipoActionPerformed(evt);
+            }
+        });
         add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, -1, -1));
+
+        btnMostrar1.setText("jButton1");
+        btnMostrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrar1ActionPerformed(evt);
+            }
+        });
+        add(btnMostrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtPrecioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyTyped
@@ -153,18 +170,44 @@ public class AgregarPropiedad extends javax.swing.JPanel {
     }//GEN-LAST:event_txtMetrosKeyTyped
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        if(!txtDireccion.getText().isEmpty()&&!comboEstado.getSelectedItem().toString().isEmpty()&&!txtPrecio.getText().isEmpty()&&!comboEstado.getSelectedItem().toString().isEmpty()
+        if(!txtDireccion.getText().isEmpty()&&!comboTipo.getSelectedItem().toString().isEmpty()&&!txtPrecio.getText().isEmpty()&&!comboEstado.getSelectedItem().toString().isEmpty()
                 &&!txtHabitaciones.getText().isEmpty()&&!txtBaños.getText().isEmpty()&&!txtMetros.getText().isEmpty()){
             String direccion = txtDireccion.getText();
+            Propiedad prop = new Propiedad(txtDireccion.getText(),comboTipo.getSelectedItem().toString(),Double.parseDouble(txtPrecio.getText()),comboEstado.getSelectedItem().toString(),
+            txtHabitaciones.getText(), txtBaños.getText(), txtMetros.getText());
+            GestorPropiedades gestor = new GestorPropiedades();
+            gestor.añadirPropiedad(prop,propiedades);
             
-            
+            txtDireccion.setText("");
+            txtPrecio.setText("");
+            txtHabitaciones.setText("");
+            txtBaños.setText("");
+            txtMetros.setText("");
+            System.out.println("Ingresado correctamente");
         }
     }//GEN-LAST:event_btnIngresarActionPerformed
+
+    private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDireccionActionPerformed
+
+    private void comboTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboTipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboTipoActionPerformed
+
+    private void btnMostrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrar1ActionPerformed
+        String resultado = "";
+        for(int i=0;i<propiedades.size();i++){
+            resultado = resultado + propiedades.get(i).toString()+"\n";
+        }
+        System.out.println(resultado);
+    }//GEN-LAST:event_btnMostrar1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup GroupEstado;
     private javax.swing.JButton btnIngresar;
+    private javax.swing.JButton btnMostrar1;
     private javax.swing.JComboBox<String> comboEstado;
     private javax.swing.JComboBox<String> comboTipo;
     private javax.swing.ButtonGroup groupTipo;
