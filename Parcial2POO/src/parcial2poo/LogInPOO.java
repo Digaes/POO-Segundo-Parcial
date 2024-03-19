@@ -12,9 +12,9 @@ import java.awt.Color;
  */
 public class LogInPOO extends javax.swing.JFrame {
 
-    /**
-     * Creates new form LogInPOO
-     */
+    private String VUser[] = new String[100];
+    private String VPassword[] = new String[100];
+    
     public LogInPOO() {
         initComponents();
     }
@@ -38,6 +38,7 @@ public class LogInPOO extends javax.swing.JFrame {
         lblIncorrecto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -119,6 +120,14 @@ public class LogInPOO extends javax.swing.JFrame {
         btnLogIn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         btnLogIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLogIn.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
+        btnLogIn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnLogInMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnLogInMouseExited(evt);
+            }
+        });
         btnLogIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogInActionPerformed(evt);
@@ -191,6 +200,7 @@ public class LogInPOO extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExitMouseClicked
@@ -198,11 +208,11 @@ public class LogInPOO extends javax.swing.JFrame {
     }//GEN-LAST:event_lblExitMouseClicked
 
     private void lblExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExitMouseEntered
-        lblExit.setForeground(new Color(69, 124, 147));
+        lblExit.setForeground(new Color(76,21,185));
     }//GEN-LAST:event_lblExitMouseEntered
 
     private void lblExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExitMouseExited
-        lblExit.setForeground(new Color(69, 175, 193));
+        lblExit.setForeground(new Color(143,96,237));
     }//GEN-LAST:event_lblExitMouseExited
 
     private void txtUsuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsuarioFocusLost
@@ -265,24 +275,21 @@ public class LogInPOO extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBoxPasswordActionPerformed
 
     private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
-        /*VUser[0] = "Santiago Vengoechea";
-        VPassword[0] = "Salud123";
-        VUser[1] = "Joshua Lobo";
-        VPassword[1] = "Salud123";
-        VUser[2] = "Kesly Rodriguez";
-        VPassword[2] = "Salud123";
+        VUser[0] = "Diana Garcia";
+        VPassword[0] = "Hogares1";
+        VUser[1] = "Kesly Rodriguez";
+        VPassword[1] = "Hogares1";
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             if (txtUsuario.getText().equals(VUser[i])) {
                 if (jPassword.getText().equals(VPassword[i])) {
                     try {
-                        //Name = NombreVendedor();
                         setVisible(false);
-                        MENU_Principal m = new MENU_Principal();
+                        FrameInicio m = new FrameInicio();
                         m.setVisible(true);
-                    } catch (IOException ex) {
-                        Logger.getLogger(LogIn_Clinica.class.getName()).log(Level.SEVERE, null, ex);
-
+                        this.setVisible(false);
+                    } catch (Exception e) {
+                        
                     }
                 } else {
                     lblIncorrecto.setForeground(Color.red);
@@ -290,8 +297,16 @@ public class LogInPOO extends javax.swing.JFrame {
             } else {
                 lblIncorrecto.setForeground(Color.red);
             }
-        }*/
+        }
     }//GEN-LAST:event_btnLogInActionPerformed
+
+    private void btnLogInMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogInMouseEntered
+        btnLogIn.setBackground(new Color(76,21,185));
+    }//GEN-LAST:event_btnLogInMouseEntered
+
+    private void btnLogInMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogInMouseExited
+        btnLogIn.setBackground(new Color(143,96,237));
+    }//GEN-LAST:event_btnLogInMouseExited
 
     /**
      * @param args the command line arguments
