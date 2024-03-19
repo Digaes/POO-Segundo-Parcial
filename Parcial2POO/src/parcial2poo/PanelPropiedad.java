@@ -34,6 +34,8 @@ public class PanelPropiedad extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},

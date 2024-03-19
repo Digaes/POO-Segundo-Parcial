@@ -154,7 +154,7 @@ public class AgregarPropiedad extends javax.swing.JPanel {
                 btnMostrar1ActionPerformed(evt);
             }
         });
-        add(btnMostrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 520, -1, -1));
+        add(btnMostrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 550, -1, -1));
 
         jSeparator1.setBackground(new java.awt.Color(204, 204, 255));
         jSeparator1.setForeground(new java.awt.Color(204, 204, 255));
