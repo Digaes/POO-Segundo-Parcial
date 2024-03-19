@@ -2,6 +2,7 @@
 package parcial2poo;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,6 +27,7 @@ public class AgregarPropiedad extends javax.swing.JPanel {
 
         groupTipo = new javax.swing.ButtonGroup();
         GroupEstado = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtDireccion = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -42,87 +44,101 @@ public class AgregarPropiedad extends javax.swing.JPanel {
         comboEstado = new javax.swing.JComboBox<>();
         comboTipo = new javax.swing.JComboBox<>();
         btnMostrar1 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 100));
 
         jLabel1.setFont(new java.awt.Font("Arial Unicode MS", 0, 16)); // NOI18N
         jLabel1.setText("Dirección");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, -1, -1));
 
         txtDireccion.setFont(new java.awt.Font("Arial Unicode MS", 0, 15)); // NOI18N
+        txtDireccion.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         txtDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDireccionActionPerformed(evt);
             }
         });
-        add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 242, -1));
+        add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 180, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial Unicode MS", 0, 16)); // NOI18N
         jLabel2.setText("Tipo de propiedad");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
 
         txtPrecio.setFont(new java.awt.Font("Arial Unicode MS", 0, 15)); // NOI18N
+        txtPrecio.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         txtPrecio.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtPrecioKeyTyped(evt);
             }
         });
-        add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 242, -1));
+        add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 180, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial Unicode MS", 0, 16)); // NOI18N
         jLabel3.setText("Precio");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial Unicode MS", 0, 16)); // NOI18N
         jLabel4.setText("Estado");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
 
         txtHabitaciones.setFont(new java.awt.Font("Arial Unicode MS", 0, 15)); // NOI18N
+        txtHabitaciones.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         txtHabitaciones.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtHabitacionesKeyTyped(evt);
             }
         });
-        add(txtHabitaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 150, -1));
+        add(txtHabitaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 60, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial Unicode MS", 0, 16)); // NOI18N
         jLabel5.setText("Número de habitaciones");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, -1, -1));
 
         txtBaños.setFont(new java.awt.Font("Arial Unicode MS", 0, 15)); // NOI18N
+        txtBaños.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         txtBaños.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtBañosKeyTyped(evt);
             }
         });
-        add(txtBaños, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 150, -1));
+        add(txtBaños, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 60, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial Unicode MS", 0, 16)); // NOI18N
         jLabel6.setText("Número de baños");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Arial Unicode MS", 0, 16)); // NOI18N
         jLabel7.setText("Metros cuadrados");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, -1, -1));
 
         txtMetros.setFont(new java.awt.Font("Arial Unicode MS", 0, 15)); // NOI18N
+        txtMetros.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         txtMetros.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtMetrosKeyTyped(evt);
             }
         });
-        add(txtMetros, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 390, 150, -1));
+        add(txtMetros, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 250, 60, -1));
 
+        btnIngresar.setBackground(new java.awt.Color(204, 204, 255));
+        btnIngresar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnIngresar.setForeground(new java.awt.Color(255, 255, 255));
         btnIngresar.setText("Ingresar");
+        btnIngresar.setBorderPainted(false);
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresarActionPerformed(evt);
             }
         });
-        add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, -1, -1));
+        add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 130, 40));
 
         comboEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disponible", "Vendido", "Alquilado" }));
-        add(comboEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, -1, -1));
+        add(comboEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
         comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casa", "Apartamento", "Local Comercial" }));
         comboTipo.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +146,7 @@ public class AgregarPropiedad extends javax.swing.JPanel {
                 comboTipoActionPerformed(evt);
             }
         });
-        add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, -1, -1));
+        add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, -1, -1));
 
         btnMostrar1.setText("jButton1");
         btnMostrar1.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +154,12 @@ public class AgregarPropiedad extends javax.swing.JPanel {
                 btnMostrar1ActionPerformed(evt);
             }
         });
-        add(btnMostrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, -1, -1));
+        add(btnMostrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 520, -1, -1));
+
+        jSeparator1.setBackground(new java.awt.Color(204, 204, 255));
+        jSeparator1.setForeground(new java.awt.Color(204, 204, 255));
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 20, 300));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtPrecioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyTyped
@@ -183,8 +204,9 @@ public class AgregarPropiedad extends javax.swing.JPanel {
             txtHabitaciones.setText("");
             txtBaños.setText("");
             txtMetros.setText("");
-            System.out.println("Ingresado correctamente");
+           JOptionPane.showMessageDialog(null, "Ingresado correctamente", "CONFIRM", 0);
         }
+        
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
@@ -218,6 +240,8 @@ public class AgregarPropiedad extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField txtBaños;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtHabitaciones;
