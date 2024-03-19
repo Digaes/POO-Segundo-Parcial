@@ -138,7 +138,7 @@ public class AgregarPropiedad extends javax.swing.JPanel {
                 btnMostrar1ActionPerformed(evt);
             }
         });
-        add(btnMostrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, -1, -1));
+        add(btnMostrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtPrecioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyTyped
