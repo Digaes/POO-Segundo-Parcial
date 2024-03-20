@@ -179,7 +179,7 @@ public class FrameInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarPropMouseExited
 
     private void showPanel(JPanel p) {
-        p.setSize(840, 500);
+        p.setSize(765, 591);
         p.setLocation(0, 0);
         Content.removeAll();
         Content.add(p, BorderLayout.CENTER);

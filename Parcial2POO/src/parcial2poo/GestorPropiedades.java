@@ -16,7 +16,7 @@ public class GestorPropiedades {
         
     }
     
-    public boolean añadirPropiedad(Propiedad propiedad,ArrayList<Propiedad> prop){
+    public void añadirPropiedad(Propiedad propiedad,ArrayList<Propiedad> prop){
         boolean sw = true;
         for (int i = 0; i < prop.size(); i++) {
            if (prop.get(i).getDireccion().equals(propiedad.getDireccion())){
@@ -24,17 +24,26 @@ public class GestorPropiedades {
                 sw = false;
            } 
     }
-        if (sw == true){
+        if (sw){
             prop.add(propiedad);
         }
-        return sw;
     }
     
-    public void modificarPropiedad(Propiedad propiedad){
+    public void modificarPropiedad(Propiedad propiedad, ArrayList<Propiedad> prop){
         
     }
     
-    public void eliminarPropiedad(Propiedad propiedad){
-        
+    public void eliminarPropiedad(String direccion, ArrayList<Propiedad> prop){
+        boolean sw = true;
+        for (int i = 0; i < prop.size(); i++) {
+           if (prop.get(i).getDireccion().equalsIgnoreCase(direccion)){
+                sw = false;
+                prop.remove(i);
+                JOptionPane.showMessageDialog(null, "Esta propiedad fue eliminada con éxito", "ERROR", 0);
+           } 
+    }
+        if (sw){
+            //notificacion no existe
+        }
     }
 }

@@ -1,6 +1,7 @@
 
 package parcial2poo;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -43,7 +44,6 @@ public class AgregarPropiedad extends javax.swing.JPanel {
         btnIngresar = new javax.swing.JButton();
         comboEstado = new javax.swing.JComboBox<>();
         comboTipo = new javax.swing.JComboBox<>();
-        btnMostrar1 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -130,6 +130,14 @@ public class AgregarPropiedad extends javax.swing.JPanel {
         btnIngresar.setForeground(new java.awt.Color(255, 255, 255));
         btnIngresar.setText("Ingresar");
         btnIngresar.setBorderPainted(false);
+        btnIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnIngresarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnIngresarMouseExited(evt);
+            }
+        });
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresarActionPerformed(evt);
@@ -147,14 +155,6 @@ public class AgregarPropiedad extends javax.swing.JPanel {
             }
         });
         add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, -1));
-
-        btnMostrar1.setText("jButton1");
-        btnMostrar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMostrar1ActionPerformed(evt);
-            }
-        });
-        add(btnMostrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 550, -1, -1));
 
         jSeparator1.setBackground(new java.awt.Color(204, 204, 255));
         jSeparator1.setForeground(new java.awt.Color(204, 204, 255));
@@ -204,7 +204,8 @@ public class AgregarPropiedad extends javax.swing.JPanel {
             txtHabitaciones.setText("");
             txtBaños.setText("");
             txtMetros.setText("");
-           JOptionPane.showMessageDialog(null, "Ingresado correctamente", "CONFIRM", 0);
+        }else{
+            //notificacion faltan datos
         }
         
     }//GEN-LAST:event_btnIngresarActionPerformed
@@ -217,19 +218,18 @@ public class AgregarPropiedad extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboTipoActionPerformed
 
-    private void btnMostrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrar1ActionPerformed
-        String resultado = "";
-        for(int i=0;i<propiedades.size();i++){
-            resultado = resultado + propiedades.get(i).toString()+"\n";
-        }
-        System.out.println(resultado);
-    }//GEN-LAST:event_btnMostrar1ActionPerformed
+    private void btnIngresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarMouseEntered
+        btnIngresar.setBackground(new Color(149,149,253));
+    }//GEN-LAST:event_btnIngresarMouseEntered
+
+    private void btnIngresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarMouseExited
+        btnIngresar.setBackground(new Color(204,204,255));
+    }//GEN-LAST:event_btnIngresarMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup GroupEstado;
     private javax.swing.JButton btnIngresar;
-    private javax.swing.JButton btnMostrar1;
     private javax.swing.JComboBox<String> comboEstado;
     private javax.swing.JComboBox<String> comboTipo;
     private javax.swing.ButtonGroup groupTipo;
